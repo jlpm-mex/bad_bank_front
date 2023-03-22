@@ -57,7 +57,7 @@ export const Depositos = () => {
     e.preventDefault();
     if (executeValidations()) {
       axios
-        .get(`http://ec2-18-118-0-82.us-east-2.compute.amazonaws.com:4000/operaciones/deposito/${context.user.mail}/${monto}`)
+        .get(`http://ec2-3-133-121-144.us-east-2.compute.amazonaws.com:4000/operaciones/deposito/${context.user.mail}/${monto}`)
         .then((resp) => {
           const data = resp?.data;
           console.log(data);

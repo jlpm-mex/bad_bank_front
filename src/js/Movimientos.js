@@ -10,7 +10,7 @@ export const Movimientos = ()=> {
 
     useEffect(()=>{
         if(context?.user?._id !== undefined){
-            axios.get(`http://ec2-18-118-0-82.us-east-2.compute.amazonaws.com:4000/operaciones/${context.user._id}`).then((resp)=>{
+            axios.get(`http://ec2-3-133-121-144.us-east-2.compute.amazonaws.com:4000/operaciones/${context.user._id}`).then((resp)=>{
                 let data = resp.data;
                 setMovimientos(data);
             });

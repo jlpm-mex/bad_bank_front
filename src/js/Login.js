@@ -146,10 +146,11 @@ export const Login = () => {
     }
   };
 
-  const onLogin = () => {
+  const onLogin = (e) => {
+    e.preventDefault();
     if (validateInputs()) {
       axios
-        .get(`http://ec2-18-118-0-82.us-east-2.compute.amazonaws.com:4000/login/${mail}/${password}`)
+        .get(`http://ec2-3-133-121-144.us-east-2.compute.amazonaws.com:4000/login/${mail}/${password}`)
         .then((resp) => {
           const data = resp?.data;
           context.addUser(data);
@@ -159,8 +160,14 @@ export const Login = () => {
           const { data } = err?.response;
           displayMessage(data, VARIANTS.warning);
         });
+        clearInputs();
     }
   };
+
+  const clearInputs = () => {
+    setMail("");
+    setPassword("");
+  }
 
   return (
     <>
