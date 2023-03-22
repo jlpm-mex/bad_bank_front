@@ -149,7 +149,7 @@ export const Login = () => {
   const onLogin = () => {
     if (validateInputs()) {
       axios
-        .get(`http://localhost:4000/login/${mail}/${password}`)
+        .get(`http://ec2-18-118-0-82.us-east-2.compute.amazonaws.com:4000/login/${mail}/${password}`)
         .then((resp) => {
           const data = resp?.data;
           context.addUser(data);

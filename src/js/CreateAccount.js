@@ -53,7 +53,7 @@ export const CreateAccount = () => {
         password: password,
         balance: 0,
       };
-      axios.get(`http://localhost:4000/account/create/${user.name}/${user.mail}/${user.password}/${user.balance}`).then((msg)=>{
+      axios.get(`http://ec2-18-118-0-82.us-east-2.compute.amazonaws.com:4000/account/create/${user.name}/${user.mail}/${user.password}/${user.balance}`).then((msg)=>{
         userContext.addUser(user);
         displayMessage("Usuario creado exitosamente!", VARIANTS.success);
       }).catch((err)=>{
